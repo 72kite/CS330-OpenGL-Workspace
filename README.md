@@ -9,6 +9,7 @@ A 3D desktop workspace scene built with C++ and OpenGL. Features custom primitiv
 
 - [Project Overview](#project-overview)
 - [Included Artifacts](#included-artifacts)
+- [Dependencies](#dependencies)
 - [Technologies Used](#technologies-used)
 - [Reflection](#reflection)
   - [Designing Software](#1-how-do-i-approach-designing-software)
@@ -35,6 +36,29 @@ The scene demonstrates three core competencies:
 |---|---|
 | **3D Scene Source Code** | Complete C++ solution covering mesh generation, shader rendering, and full scene composition |
 | **Design Decisions Document** | Retrospective analysis of the creative and technical choices made throughout development |
+
+---
+
+## Dependencies
+
+The 3D scene source code requires the following libraries to build and run. These are **not included in this repository** due to file size constraints. Download and configure each one before opening the project in Visual Studio 2022.
+
+| Library | Purpose | Download |
+|---|---|---|
+| **GLEW** 2.1.0 | OpenGL extension loader | [glew.sourceforge.net](http://glew.sourceforge.net/) |
+| **GLFW** 3.x | Window creation and input handling | [glfw.org](https://www.glfw.org/download.html) |
+| **GLM** 0.9.9+ | Mathematics library for graphics (vectors, matrices) | [github.com/g-truc/glm](https://github.com/g-truc/glm) |
+| **stb_image** | Single-header image loader for textures | [github.com/nothings/stb](https://github.com/nothings/stb) |
+
+### Setup Instructions
+
+1. Download each library from the links above
+2. Place headers and `.lib` files in your Visual Studio project's include and library directories
+3. In Visual Studio, confirm the following under **Project Properties:**
+   - `C/C++ > Additional Include Directories` points to your include folder
+   - `Linker > Additional Library Directories` points to your lib folder
+   - `Linker > Input > Additional Dependencies` includes `glew32.lib`, `glfw3.lib`, and `opengl32.lib`
+4. Copy `glew32.dll` into the same directory as the compiled `.exe`
 
 ---
 
